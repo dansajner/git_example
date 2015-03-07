@@ -1,4 +1,6 @@
-class git {
+# Class - git_example
+#
+class git_example {
 
   package { 'git':
     ensure => installed,
@@ -6,13 +8,13 @@ class git {
 
   $repo = '/home/vagrant/repo'
 
-  file { $repo:
+  file { ${repo}:
     ensure => directory,
     owner  => 'vagrant',
     group  => 'vagrant',
   }
 
-  exec { "/usr/bin/git init $repo":
+  exec { "/usr/bin/git init ${repo}":
     creates => "${repo}/.git/config",
     user    => 'vagrant',
     group   => 'vagrant',
@@ -25,7 +27,7 @@ class git {
     group   => 'vagrant',
     mode    => '0755',
     content => 'curl http://localhost:8080/job/test/build?delay=0sec',
-    require => Exec[ "/usr/bin/git init $repo" ],
+    require => Exec[ "/usr/bin/git init ${repo}" ],
   }
 
 }
