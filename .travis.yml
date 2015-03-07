@@ -1,7 +1,7 @@
 language: ruby
 rvm:
   - 1.8.7
-install: gem install puppet
+install: gem install puppet-lint
 script: "puppet-lint manifests/init.pp"
 branches:
   only:
