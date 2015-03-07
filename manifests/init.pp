@@ -8,7 +8,7 @@ class git_example {
 
   $repo = '/home/vagrant/repo'
 
-  file { ${repo}:
+  file { $repo:
     ensure => directory,
     owner  => 'vagrant',
     group  => 'vagrant',
