@@ -26,8 +26,8 @@ class git_example {
     owner   => 'vagrant',
     group   => 'vagrant',
     mode    => '0755',
-    content => 'curl http://localhost:8080/job/test/build?delay=0sec',
-    require => Exec[ "/usr/bin/git init ${repo}" ],
+    content => 'curl http://localhost:8080/job/test_job/build?delay=0sec',
+    require => Exec[ "/usr/bin/git init $repo" ],
   }
 
 }
