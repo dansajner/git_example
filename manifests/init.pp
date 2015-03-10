@@ -1,6 +1,3 @@
-# Class - git_example
-#
-#
 class git_example {
 
   package { 'git':
@@ -21,6 +18,8 @@ class git_example {
     group   => 'vagrant',
     require => [ File[ $repo ], Package[ 'git' ] ],
   }
+
+  file { 
 
   file { "${repo}/.git/hooks/post-commit":
     ensure  => present,
