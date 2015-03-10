@@ -1,5 +1,6 @@
 # Class - git_example
 #
+#
 class git_example {
 
   package { 'git':
